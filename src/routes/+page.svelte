@@ -73,13 +73,18 @@
     on:click={closeModal}
     on:keydown={(e) => e.key === 'Escape' && closeModal()}
   >
-    <div class="modal-content" on:click|stopPropagation>
+    <div
+      class="modal-content"
+      role="presentation" 
+      on:click|stopPropagation
+    >
       <button class="close" on:click={closeModal} aria-label="Close modal">&times;</button>
       <img src={modalImg} alt={modalTitle} />
       <h2>{modalTitle}</h2>
     </div>
   </div>
 {/if}
+
 
 <style>
   :global(html),
