@@ -2,14 +2,14 @@
   import { Heart } from 'lucide-svelte';
 
   let products = [
-    { id: 1, name: "Aurora Chronograph", image: "/images/bracelets-1.jpg", price: "$249", wished: false },
-    { id: 2, name: "Midnight Eclipse", image: "/images/bracelets-2.jpg", price: "$129", wished: false },
-    { id: 3, name: "Silver Horizon", image: "/images/bracelets-3.jpg", price: "$199", wished: false },
-    { id: 4, name: "Diamond Starlight", image: "/images/bracelets-4.jpg", price: "$99", wished: false },
-    { id: 5, name: "Emerald Timepiece", image: "/images/bracelets-5.jpg", price: "$179", wished: false },
-    { id: 6, name: "Golden Regent", image: "/images/bracelets-6.jpg", price: "$229", wished: false },
-    { id: 7, name: "Silver & Gold Majesty", image: "/images/bracelets-7.jpg", price: "$259", wished: false },
-    { id: 8, name: "Royal Classic", image: "/images/bracelets-8.jpg", price: "$199", wished: false }
+    { id: 1, name: "Aurora Cuff", image: "/images/bracelet-1.jpg", price: "$149", wished: false },
+    { id: 2, name: "Silver Horizon Bracelet", image: "/images/bracelet-2.jpg", price: "$89", wished: false },
+    { id: 3, name: "Midnight Bangle", image: "/images/bracelet-3.jpg", price: "$119", wished: false },
+    { id: 4, name: "Starlight Diamond Bangle", image: "/images/bracelet-4.jpg", price: "$69", wished: false },
+    { id: 5, name: "Emerald Classic Bracelet", image: "/images/bracelet-5.jpg", price: "$109", wished: false },
+    { id: 6, name: "Golden Regent Bangle", image: "/images/bracelet-6.jpg", price: "$139", wished: false },
+    { id: 7, name: "Gold Majesty Bracelet", image: "/images/bracelet-7.jpg", price: "$159", wished: false },
+    { id: 8, name: "Royal Classic Cuff", image: "/images/bracelet-8.jpg", price: "$119", wished: false }
   ];
 
   function addToCart(product) {
@@ -22,7 +22,7 @@
 </script>
 
 <div class="banner">
-  <img src="/images/banner-2.jpg" alt="Bracelet Banner" class="banner-image" />
+  <img src="/images/banner-4.jpg" alt="Bracelet Banner" class="banner-image" />
   <div class="banner-text">
     <h2>Timeless Elegance</h2>
     <p>Discover our exclusive collection of bracelets</p>

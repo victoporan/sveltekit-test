@@ -2,14 +2,14 @@
   import { Heart } from 'lucide-svelte';
 
   let products = [
-    { id: 1, name: "Aurora Chronograph", image: "/images/earring-1.jpg", price: "$249", wished: false },
-    { id: 2, name: "Midnight Eclipse", image: "/images/earring-2.jpg", price: "$129", wished: false },
-    { id: 3, name: "Silver Horizon", image: "/images/earring-3.jpg", price: "$199", wished: false },
-    { id: 4, name: "Diamond Starlight", image: "/images/earring-4.jpg", price: "$99", wished: false },
-    { id: 5, name: "Emerald Timepiece", image: "/images/earring-5.jpg", price: "$179", wished: false },
-    { id: 6, name: "Golden Regent", image: "/images/earring-6.jpg", price: "$229", wished: false },
-    { id: 7, name: "Silver & Gold Majesty", image: "/images/earring-7.jpg", price: "$259", wished: false },
-    { id: 8, name: "Royal Classic", image: "/images/earring-8.jpg", price: "$199", wished: false }
+    { id: 1, name: "Pearl Drop Earrings", image: "/images/earrings-1.jpg", price: "$149", wished: false },
+    { id: 2, name: "Midnight Studs", image: "/images/earrings-2.jpg", price: "$99", wished: false },
+    { id: 3, name: "Silver Horizon Hoops", image: "/images/earrings-3.jpg", price: "$129", wished: false },
+    { id: 4, name: "Starlight Diamond Earrings", image: "/images/earrings-4.jpg", price: "$79", wished: false },
+    { id: 5, name: "Emerald Classic Studs", image: "/images/earrings-5.jpg", price: "$119", wished: false },
+    { id: 6, name: "Golden Regent Drops", image: "/images/earrings-6.jpg", price: "$159", wished: false },
+    { id: 7, name: "Silver & Gold Majesty Hoops", image: "/images/earrings-7.jpg", price: "$179", wished: false },
+    { id: 8, name: "Royal Classic Earrings", image: "/images/earrings-8.jpg", price: "$139", wished: false }
   ];
 
   function addToCart(product) {
@@ -22,7 +22,7 @@
 </script>
 
 <div class="banner">
-  <img src="/images/banner-2.jpg" alt="Earring Banner" class="banner-image" />
+  <img src="/images/banner-6.jpg" alt="Earring Banner" class="banner-image" />
   <div class="banner-text">
     <h2>Timeless Elegance</h2>
     <p>Discover our exclusive collection of earrings</p>

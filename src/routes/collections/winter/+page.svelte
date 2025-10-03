@@ -8,8 +8,8 @@
     { id: 4, name: "Diamond Snowflake Earrings", image: "/images/winter-earrings-1.jpg", price: "$59", wished: false },
     { id: 5, name: "Emerald Necklace", image: "/images/winter-necklace-2.jpg", price: "$39", wished: false },
     { id: 6, name: "Reindeer Golden Necklace", image: "/images/winter-necklace-5.jpg", price: "$39", wished: false },
-    { id: 7, name: "Silver&Gold Reindeer Necklece", image: "/images/winter-necklace-3.jpg", price: "$59", wished: false },
-    { id: 8, name: "Golden Reindeer Necklece", image: "/images/winter-necklace-4.jpg", price: "$29", wished: false }
+    { id: 7, name: "Silver&Gold Reindeer Necklace", image: "/images/winter-necklace-3.jpg", price: "$59", wished: false },
+    { id: 8, name: "Golden Reindeer Necklace", image: "/images/winter-necklace-4.jpg", price: "$29", wished: false }
   ];
 
   function addToCart(product) {

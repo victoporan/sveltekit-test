@@ -2,14 +2,14 @@
   import { Heart } from 'lucide-svelte';
 
   let products = [
-    { id: 1, name: "Aurora Chronograph", image: "/images/ring-1.jpg", price: "$249", wished: false },
-    { id: 2, name: "Midnight Eclipse", image: "/images/ring-2.jpg", price: "$129", wished: false },
-    { id: 3, name: "Silver Horizon", image: "/images/ring-3.jpg", price: "$199", wished: false },
-    { id: 4, name: "Diamond Starlight", image: "/images/ring-4.jpg", price: "$99", wished: false },
-    { id: 5, name: "Emerald Timepiece", image: "/images/ring-5.jpg", price: "$179", wished: false },
-    { id: 6, name: "Golden Regent", image: "/images/ring-6.jpg", price: "$229", wished: false },
-    { id: 7, name: "Silver & Gold Majesty", image: "/images/ring-7.jpg", price: "$259", wished: false },
-    { id: 8, name: "Royal Classic", image: "/images/ring-8.jpg", price: "$199", wished: false }
+    { id: 1, name: "Aurora Solitaire Ring", image: "/images/ring-1.jpg", price: "$49", wished: false },
+    { id: 2, name: "Midnight Band", image: "/images/ring-2.jpg", price: "$89", wished: false },
+    { id: 3, name: "Silver Horizon Ring", image: "/images/ring-3.jpg", price: "$119", wished: false },
+    { id: 4, name: "Starlight Diamond Ring", image: "/images/ring-4.jpg", price: "$69", wished: false },
+    { id: 5, name: "Emerald Classic Ring", image: "/images/ring-5.jpg", price: "$109", wished: false },
+    { id: 6, name: "Golden Regent Ring", image: "/images/ring-6.jpg", price: "$89", wished: false },
+    { id: 7, name: "Silver & Gold Majesty Ring", image: "/images/ring-7.jpg", price: "$59", wished: false },
+    { id: 8, name: "Royal Classic Ring", image: "/images/ring-8.jpg", price: "$79", wished: false }
   ];
 
   function addToCart(product) {

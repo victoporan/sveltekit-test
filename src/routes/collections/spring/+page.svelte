@@ -6,7 +6,7 @@
     { id: 2, name: "Golden Earrings and Pendant", image: "/images/spring-necklaces-7.jpg", price: "$59", wished: false },
     { id: 3, name: "Golden Bracelet", image: "/images/spring-bracelet-2.jpg", price: "$29", wished: false },
     { id: 4, name: "Silver Earrings", image: "/images/spring-earrings-5.jpg", price: "$29", wished: false },
-    { id: 5, name: "Golden Necklance", image: "/images/spring-necklaces-4.jpg", price: "$49", wished: false },
+    { id: 5, name: "Golden Necklace", image: "/images/spring-necklaces-4.jpg", price: "$49", wished: false },
     { id: 6, name: "Black Stone Ring", image: "/images/spring-ring-2.jpg", price: "$29", wished: false },
     { id: 7, name: "Ruby Necklace", image: "/images/spring-necklaces-6.jpg", price: "$39", wished: false },
     { id: 8, name: "Butterfly Pendant", image: "/images/spring-necklaces-5.jpg", price: "$39", wished: false }
