@@ -80,4 +80,35 @@
   line-height: 1.5;
   text-align: justify;
 }
+
+/* Tablet Responsive */
+@media (max-width: 900px) {
+  .about-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon-card {
+    flex: 1 1 80%;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .about-text h2 {
+    font-size: 28px;
+  }
+  .about-text p {
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+  .icon-card p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .icon-card {
+    flex: 1 1 100%;
+    padding: 0 1rem;
+  }
+}
 </style>

@@ -64,6 +64,7 @@
   gap: 0.8rem;
   font-size: 1rem;
   color: #111;
+  text-align: left;
 }
 
 .contact-form {
@@ -105,19 +106,55 @@
 }
 
 .contact-form button:hover {
-  background-color: rgb 96, 85, 92;
+  background-color: rgb(80, 70, 80);
 }
 
-@media (max-width: 600px) {
+/* Responsive */
+/* Tablet */
+@media (max-width: 900px) {
+  .contact-page {
+    padding: 2.5rem 1.5rem;
+  }
   .contact-info {
-    gap: 0.6rem;
+    gap: 0.8rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+  .contact-page h1 {
+    font-size: 2rem;
+  }
+  .contact-page p {
+    font-size: 1rem;
+  }
+  .contact-info {
+    gap: 0.5rem;
+  }
+  .info-item span {
+    font-size: 0.95rem;
   }
   .contact-form input,
   .contact-form textarea {
     font-size: 0.9rem;
   }
+  .contact-form textarea {
+    min-height: 100px;
+  }
   .contact-form button {
     font-size: 0.9rem;
+    padding: 0.6rem 1rem;
   }
 }
 </style>

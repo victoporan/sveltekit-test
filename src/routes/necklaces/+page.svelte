@@ -2,14 +2,14 @@
   import { Heart } from 'lucide-svelte';
 
   let products = [
-    { id: 1, name: "Aurora Pendant", image: "/images/necklace-1.jpg", price: "$149", wished: false },
-    { id: 2, name: "Midnight Choker", image: "/images/necklace-2.jpg", price: "$99", wished: false },
-    { id: 3, name: "Silver Horizon Necklace", image: "/images/necklace-3.jpg", price: "$129", wished: false },
-    { id: 4, name: "Starlight Diamond Pendant", image: "/images/necklace-4.jpg", price: "$79", wished: false },
-    { id: 5, name: "Emerald Classic Necklace", image: "/images/necklace-5.jpg", price: "$119", wished: false },
-    { id: 6, name: "Golden Regent Necklace", image: "/images/necklace-6.jpg", price: "$159", wished: false },
-    { id: 7, name: "Silver & Gold Majesty Necklace", image: "/images/necklace-7.jpg", price: "$179", wished: false },
-    { id: 8, name: "Royal Classic Pendant", image: "/images/necklace-8.jpg", price: "$139", wished: false }
+    { id: 1, name: "Aurora Pendant", image: "/images/necklace-1.jpg", price: "$199", wished: false },
+    { id: 2, name: "Silver Horizon Necklace", image: "/images/necklace-2.jpg", price: "$149", wished: false },
+    { id: 3, name: "Midnight Pearl Necklace", image: "/images/necklace-3.jpg", price: "$179", wished: false },
+    { id: 4, name: "Starlight Diamond Necklace", image: "/images/necklace-4.jpg", price: "$229", wished: false },
+    { id: 5, name: "Emerald Drop Necklace", image: "/images/necklace-5.jpg", price: "$189", wished: false },
+    { id: 6, name: "Golden Regent Necklace", image: "/images/necklace-6.jpg", price: "$169", wished: false },
+    { id: 7, name: "Majestic Gold Chain", image: "/images/necklace-7.jpg", price: "$159", wished: false },
+    { id: 8, name: "Royal Pearl Strand", image: "/images/necklace-8.jpg", price: "$249", wished: false }
   ];
 
   function addToCart(product) {
@@ -31,9 +31,8 @@
       const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }}>
-  Shop Now
-</button>
-
+      Shop Now
+    </button>
   </div>
 </div>
 
@@ -41,35 +40,28 @@
   <aside class="sidebar">
     <h3>Filters</h3>
     <h4>Sort by:</h4>
-    <label><input type="checkbox" /> Price: Low to High</label><br/>
-    <label><input type="checkbox" /> Price: High to Low</label><br/>
-    <label><input type="checkbox" /> Newest</label><br/>
+    <label><input type="checkbox" /> Price: Low to High</label>
+    <label><input type="checkbox" /> Price: High to Low</label>
+    <label><input type="checkbox" /> Newest</label>
     <label><input type="checkbox" /> Recommended</label>
 
     <h4>Color</h4>
-    <label><input type="checkbox" /> Gold</label><br/>
-    <label><input type="checkbox" /> Silver</label><br/>
-    <label><input type="checkbox" /> Bronze</label><br/>
-    <label><input type="checkbox" /> White</label><br/>
-    <label><input type="checkbox" /> Black</label><br/>
-    <label><input type="checkbox" /> Red</label><br/>
-    <label><input type="checkbox" /> Blue</label><br/>
+    <label><input type="checkbox" /> Gold</label>
+    <label><input type="checkbox" /> Silver</label>
+    <label><input type="checkbox" /> White</label>
+    <label><input type="checkbox" /> Black</label>
+    <label><input type="checkbox" /> Blue</label>
     <label><input type="checkbox" /> Green</label>
-
-    <h4>Size</h4>
-    <label><input type="checkbox" /> Small</label><br/>
-    <label><input type="checkbox" /> Medium</label><br/>
-    <label><input type="checkbox" /> Large</label>
+    <label><input type="checkbox" /> Red</label>
+    <label><input type="checkbox" /> Pink</label>
 
     <h4>Stone</h4>
-    <label><input type="checkbox" /> Diamond</label><br/>
-    <label><input type="checkbox" /> Ruby</label><br/>
-    <label><input type="checkbox" /> Sapphire</label><br/>
-    <label><input type="checkbox" /> Emerald</label><br/>
-    <label><input type="checkbox" /> Topaz</label><br/>
-    <label><input type="checkbox" /> Amethyst</label><br/>
-    <label><input type="checkbox" /> Pearl</label><br/>
-    <label><input type="checkbox" /> Onyx</label>
+    <label><input type="checkbox" /> Diamond</label>
+    <label><input type="checkbox" /> Ruby</label>
+    <label><input type="checkbox" /> Sapphire</label>
+    <label><input type="checkbox" /> Emerald</label>
+    <label><input type="checkbox" /> Pearl</label>
+    <label><input type="checkbox" /> Amethyst</label>
   </aside>
 
   <main id="necklaces" class="products-grid">
@@ -97,6 +89,7 @@
 </div>
 
 <style>
+/* Banner */
 .banner {
   position: relative;
   width: 100%;
@@ -109,7 +102,6 @@
   width: 100%;
   max-height: 720px;
   object-fit: cover;
-  display: block;
 }
 
 .banner-text {
@@ -123,12 +115,12 @@
 
 .banner-text h2 {
   font-size: 2.5rem;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .banner-text p {
   font-size: 1.2rem;
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
 }
 
 .banner-text button {
@@ -146,22 +138,25 @@
   background-color: #5a5757;
 }
 
+/* Shop container */
 .shop-container {
   display: grid;
-  grid-template-columns: 250px 1fr; 
+  grid-template-columns: 250px 1fr;
   gap: 20px;
   padding: 20px;
 }
 
+/* Sidebar */
 .sidebar h4 {
   margin-bottom: 10px;
+  grid-column: span 2;
 }
 
 .sidebar label {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: -6px;
+  margin-bottom: 6px;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -180,6 +175,7 @@
   background-color: #7f7b7b;
 }
 
+/* Products grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -208,12 +204,12 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
   border: none;
-  width: 24px;       
-  height: 24px;    
-  display: flex;    
+  width: 24px;
+  height: 24px;
+  display: flex;
   align-items: center;
+  cursor: pointer;
   transition: transform 0.2s;
 }
 
@@ -222,7 +218,7 @@
 }
 
 button {
-  margin-top: 0px;
+  margin-top: 0;
   padding: 0.5rem 0;
   width: 100%;
   background-color: transparent;
@@ -235,5 +231,95 @@ button {
 button:hover {
   background-color: #7f7b7b;
   color: #fff;
+}
+
+/* Responsive */
+/* Tablet */
+@media (max-width: 900px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .banner-text {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .sidebar h4 {
+    grid-column: span 2;
+  }
+
+  .sidebar label {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .banner-text {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .sidebar h4 {
+    grid-column: span 2;
+  }
+
+  .sidebar label {
+    font-size: 0.8rem;
+  }
+
+  .banner-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .banner-text button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .wishlist-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 </style>
