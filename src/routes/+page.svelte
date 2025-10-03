@@ -82,11 +82,13 @@
 {/if}
 
 <style>
-  html, body {
+  :global(html),
+  :global(body) {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
   }
+
 
   .banner {
     position: relative;
