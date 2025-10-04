@@ -8,17 +8,23 @@
     { id: 4, name: "Starlight Diamond Ring", image: "/images/ring-4.jpg", price: "$69", wished: false },
     { id: 5, name: "Emerald Classic Ring", image: "/images/ring-5.jpg", price: "$109", wished: false },
     { id: 6, name: "Golden Regent Ring", image: "/images/ring-6.jpg", price: "$89", wished: false },
-    { id: 7, name: "Silver & Gold Majesty Ring", image: "/images/ring-7.jpg", price: "$59", wished: false },
+    { id: 7, name: "Gold Majesty Ring", image: "/images/ring-7.jpg", price: "$59", wished: false },
     { id: 8, name: "Royal Classic Ring", image: "/images/ring-8.jpg", price: "$79", wished: false }
   ];
 
-  function addToCart(product) {
-    alert(`${product.name} was added to cart!`);
+
+  function sortLowToHigh() {
+    products = [...products].sort((a, b) => getPrice(a.price) - getPrice(b.price));
   }
 
-  function toggleWishlist(product) {
-    product.wished = !product.wished;
+  function sortHighToLow() {
+    products = [...products].sort((a, b) => getPrice(b.price) - getPrice(a.price));
   }
+
+  function getPrice(priceStr) {
+    return parseFloat(priceStr.replace('$', ''));
+  }
+
 </script>
 
 <div class="banner">
@@ -40,10 +46,10 @@
   <aside class="sidebar">
     <h3>Filters</h3>
     <h4>Sort by:</h4>
-    <label><input type="checkbox" /> Price: Low to High</label>
-    <label><input type="checkbox" /> Price: High to Low</label>
-    <label><input type="checkbox" /> Newest</label>
-    <label><input type="checkbox" /> Recommended</label>
+    <label><input type="checkbox" on:click={sortLowToHigh}/> Price: Low to High</label>
+    <label><input type="checkbox" on:click={sortHighToLow}/> Price: High to Low</label>
+    <label><input type="checkbox" on:click={sortNewest}/> Newest</label>
+    <label><input type="checkbox" on:click={sortRecommended}/> Recommended</label>
 
     <h4>Color</h4>
     <label><input type="checkbox" /> Gold</label>

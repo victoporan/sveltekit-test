@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+
   let showModal = false;
   let modalImg = "";
   let modalTitle = "";
@@ -12,7 +14,27 @@
   function closeModal() {
     showModal = false;
   }
+
+  // 🎯 Scroll animation logic
+  let featuredCards = [];
+
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    featuredCards.forEach((card) => observer.observe(card));
+  });
 </script>
+
 
 <div class="banner">
   <img src="/images/banner-1.png" alt="Equinox Banner" />
@@ -24,6 +46,10 @@
 <section class="intro">
   <h1>Welcome to Equinox Jewelry</h1>
   <p>Discover our exquisite jewelry collections.</p>
+</section>
+
+<section class="intro-him-her">
+  <h2>Jewelry for Her</h2>
 </section>
 
 <section class="featured">
@@ -42,6 +68,28 @@
   <button class="card" on:click={() => openModal('/images/home-4.jpg','Brilliance')}>
     <img src="/images/home-4.jpg" alt="Bracelet" />
     <h3>Brilliance</h3>
+  </button>
+</section>
+
+<section class="intro-him-her">
+  <h2>Jewelry for Him</h2>
+</section>
+<section class="featured">
+  <button class="card" on:click={() => openModal('/images/home2-1.jpg','Splendor')}>
+    <img src="/images/home2-1.jpg" alt="Ring" />
+    <h3>Valor</h3>
+  </button>
+  <button class="card" on:click={() => openModal('/images/home2-2.jpg','Elegance')}>
+    <img src="/images/home2-2.jpg" alt="Necklace" />
+    <h3>Prestige</h3>
+  </button>
+  <button class="card" on:click={() => openModal('/images/home2-3.jpg','Luxury')}>
+    <img src="/images/home2-3.jpg" alt="Bracelet" />
+    <h3>Edge</h3>
+  </button>
+  <button class="card" on:click={() => openModal('/images/home2-4.jpg','Brilliance')}>
+    <img src="/images/home2-4.jpg" alt="Bracelet" />
+    <h3>Rafinement</h3>
   </button>
 </section>
 
@@ -147,6 +195,11 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+  }
+
+  .intro-him-her {
+    padding: -10px 10%;
+    text-align: center;
   }
 
   .featured {

@@ -12,12 +12,16 @@
     { id: 8, name: "Royal Classic Earrings", image: "/images/earrings-8.jpg", price: "$139", wished: false }
   ];
 
-  function addToCart(product) {
-    alert(`${product.name} was added to cart!`);
+  function sortLowToHigh() {
+    products = [...products].sort((a, b) => getPrice(a.price) - getPrice(b.price));
   }
 
-  function toggleWishlist(product) {
-    product.wished = !product.wished;
+  function sortHighToLow() {
+    products = [...products].sort((a, b) => getPrice(b.price) - getPrice(a.price));
+  }
+
+  function getPrice(priceStr) {
+    return parseFloat(priceStr.replace('$', ''));
   }
 </script>
 
@@ -40,10 +44,10 @@
   <aside class="sidebar">
     <h3>Filters</h3>
     <h4>Sort by:</h4>
-    <label><input type="checkbox" /> Price: Low to High</label>
-    <label><input type="checkbox" /> Price: High to Low</label>
-    <label><input type="checkbox" /> Newest</label>
-    <label><input type="checkbox" /> Recommended</label>
+    <label><input type="checkbox" on:click={sortLowToHigh}/> Price: Low to High</label>
+    <label><input type="checkbox" on:click={sortHighToLow}/> Price: High to Low</label>
+    <label><input type="checkbox" on:click={sortNewest}/> Newest</label>
+    <label><input type="checkbox" on:click={sortRecommended}/> Recommended</label>
 
     <h4>Color</h4>
     <label><input type="checkbox" /> Gold</label>
