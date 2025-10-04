@@ -31,7 +31,10 @@
 
 <header>
   <div class="header-container">
-    <img src={logo} alt="Equinox Jewelry Logo" class="logo" />
+    <a href="/">
+      <img src={logo} alt="Equinox Jewelry Logo" class="logo" />
+    </a>
+
 
     <div class="top-icons">
       <a href="/wishlist" title="Wishlist"><Heart size="20" /></a>
