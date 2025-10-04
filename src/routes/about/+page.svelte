@@ -15,18 +15,35 @@
   <div class="about-icons">
     <div class="icon-card">
       <Crown size="48" />
-      <p>Premium Diamonds</p>
-      <p>At Equinox Jewelry, we use only the finest ethically sourced diamonds, selected for their clarity, sparkle, and beauty. Each piece is crafted to showcase the diamond’s natural brilliance, creating jewelry that is both elegant and enduring.</p>
+      <h3>Premium Diamonds</h3>
+      <p>
+        At Equinox Jewelry, we use only the finest ethically sourced diamonds,
+        selected for their clarity, sparkle, and beauty. Each piece is crafted
+        to showcase the diamond’s natural brilliance, creating jewelry that is
+        both elegant and enduring.
+      </p>
     </div>
+
     <div class="icon-card">
       <Sparkles size="48" />
-      <p>Gold & Precious Metals</p>
-      <p>Our jewelry is made with the finest gold, platinum, and sterling silver from trusted ethical sources. Each piece highlights the natural beauty of the metal, creating timeless, luxurious designs that celebrate elegance, durability, and the versatility of precious metals.</p>
+      <h3>Gold & Precious Metals</h3>
+      <p>
+        Our jewelry is made with the finest gold, platinum, and sterling silver
+        from trusted ethical sources. Each piece highlights the natural beauty
+        of the metal, creating timeless, luxurious designs that celebrate
+        elegance, durability, and the versatility of precious metals.
+      </p>
     </div>
+
     <div class="icon-card">
       <Star size="48" />
-      <p>Unique Materials</p>
-      <p>At Equinox Jewelry, we embrace creativity by using gemstones, enamel, and innovative alloys. These materials add color, texture, and individuality, making each piece unique. Our artisans blend tradition and innovation to craft jewelry that shines with character and timeless appeal.</p>
+      <h3>Unique Materials</h3>
+      <p>
+        At Equinox Jewelry, we embrace creativity by using gemstones, enamel,
+        and innovative alloys. These materials add color, texture, and
+        individuality, making each piece unique. Our artisans blend tradition
+        and innovation to craft jewelry that shines with character and timeless appeal.
+      </p>
     </div>
   </div>
 </section>
@@ -42,7 +59,6 @@
 .about-text h2 {
   font-size: 36px;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .about-text p {
@@ -87,6 +103,7 @@
     flex-direction: column;
     align-items: center;
   }
+
   .icon-card {
     flex: 1 1 80%;
     margin-bottom: 2rem;
@@ -98,14 +115,17 @@
   .about-text h2 {
     font-size: 28px;
   }
+
   .about-text p {
     font-size: 16px;
     margin-bottom: 2rem;
   }
+
   .icon-card p {
     font-size: 14px;
     line-height: 1.4;
   }
+
   .icon-card {
     flex: 1 1 100%;
     padding: 0 1rem;
