@@ -1,5 +1,6 @@
 <script>
   import { Heart } from 'lucide-svelte';
+  import SortAndFilters from '$lib/components/SortAndFilters.svelte';
 
   let products = [
     { id: 1, name: "Aurora Cuff", image: "/images/bracelet-1.jpg", price: "$149", wished: false },
@@ -41,39 +42,7 @@
 </div>
 
 <div class="shop-container">
-  <aside class="sidebar">
-    <h3>Filters</h3>
-    <h4>Sort by:</h4>
-    <label><input type="checkbox" on:click={sortLowToHigh}/> Price: Low to High</label>
-    <label><input type="checkbox" on:click={sortHighToLow}/> Price: High to Low</label>
-    <label><input type="checkbox" on:click={sortNewest}/> Newest</label>
-    <label><input type="checkbox" on:click={sortRecommended}/> Recommended</label>
-
-    <h4>Color</h4>
-    <label><input type="checkbox" /> Gold</label>
-    <label><input type="checkbox" /> Silver</label>
-    <label><input type="checkbox" /> Bronze</label>
-    <label><input type="checkbox" /> White</label>
-    <label><input type="checkbox" /> Black</label>
-    <label><input type="checkbox" /> Red</label>
-    <label><input type="checkbox" /> Blue</label>
-    <label><input type="checkbox" /> Green</label>
-
-    <h4>Size</h4>
-    <label><input type="checkbox" /> Small</label>
-    <label><input type="checkbox" /> Medium</label>
-    <label><input type="checkbox" /> Large</label>
-
-    <h4>Stone</h4>
-    <label><input type="checkbox" /> Diamond</label>
-    <label><input type="checkbox" /> Ruby</label>
-    <label><input type="checkbox" /> Sapphire</label>
-    <label><input type="checkbox" /> Emerald</label>
-    <label><input type="checkbox" /> Topaz</label>
-    <label><input type="checkbox" /> Amethyst</label>
-    <label><input type="checkbox" /> Pearl</label>
-    <label><input type="checkbox" /> Onyx</label>
-  </aside>
+  <SortAndFilters products={products} />
 
   <main id="bracelets" class="products-grid">
     {#each products as product}
