@@ -62,11 +62,11 @@
         </div>
       </div>
 
-      <a href="/watches" class:active={$page.url.pathname === '/watches'}>Watches</a>
-      <a href="/rings" class:active={$page.url.pathname === '/rings'}>Rings</a>
-      <a href="/bracelets" class:active={$page.url.pathname === '/bracelets'}>Bracelets</a>
-      <a href="/necklaces" class:active={$page.url.pathname === '/necklaces'}>Necklaces</a>
-      <a href="/earrings" class:active={$page.url.pathname === '/earrings'}>Earrings</a>
+      <a href="/products/watches" class:active={$page.url.pathname === '/watches'}>Watches</a>
+      <a href="/products/rings" class:active={$page.url.pathname === '/rings'}>Rings</a>
+      <a href="/products/bracelets" class:active={$page.url.pathname === '/bracelets'}>Bracelets</a>
+      <a href="/products/necklaces" class:active={$page.url.pathname === '/necklaces'}>Necklaces</a>
+      <a href="/products/earrings" class:active={$page.url.pathname === '/earrings'}>Earrings</a>
       <a href="/about" class:active={$page.url.pathname === '/about'}>About Us</a>
       <a href="/contact" class:active={$page.url.pathname === '/contact'}>Contact</a>
 

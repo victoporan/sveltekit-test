@@ -40,13 +40,13 @@ export const products = {
         { id: 8, name: "Royal Pearl Strand", image: "/images/necklace-8.jpg", price: 249, wished: false, rating: 5, createdAt: '2025-04-18' }
     ], 
     earrings: [
-        { id: 1, name: "Aurora Drop Earrings", image: "/images/earring-1.jpg", price: 99, wished: false, rating: 4, createdAt: '2025-01-18' },
-        { id: 2, name: "Silver Horizon Earrings", image: "/images/earring-2.jpg", price: 129, wished: false, rating: 3, createdAt: '2025-03-28' },
-        { id: 3, name: "Midnight Star Earrings", image: "/images/earring-3.jpg", price: 159, wished: false, rating: 5, createdAt: '2025-02-20' },
-        { id: 4, name: "Starlight Diamond Earrings", image: "/images/earring-4.jpg", price: 189, wished: false, rating: 4, createdAt: '2025-04-10' },
-        { id: 5, name: "Emerald Drop Earrings", image: "/images/earring-5.jpg", price: 169, wished: false, rating: 3, createdAt: '2025-01-25' },
-        { id: 6, name: "Golden Regent Earrings", image: "/images/earring-6.jpg", price: 149, wished: false, rating: 5, createdAt: '2025-03-15' },
-        { id: 7, name: "Gold Majesty Earrings", image: "/images/earring-7.jpg", price: 139, wished: false, rating: 4, createdAt: '2025-02-26' },
-        { id: 8, name: "Royal Pearl Earrings", image: "/images/earring-8.jpg", price: 119, wished: false, rating: 3, createdAt: '2025-04-20' }
+        { id: 1, name: "Aurora Drop Earrings", image: "/images/earrings-1.jpg", price: 99, wished: false, rating: 4, createdAt: '2025-01-18' },
+        { id: 2, name: "Silver Horizon Earrings", image: "/images/earrings-2.jpg", price: 129, wished: false, rating: 3, createdAt: '2025-03-28' },
+        { id: 3, name: "Midnight Star Earrings", image: "/images/earrings-3.jpg", price: 159, wished: false, rating: 5, createdAt: '2025-02-20' },
+        { id: 4, name: "Starlight Diamond Earrings", image: "/images/earrings-4.jpg", price: 189, wished: false, rating: 4, createdAt: '2025-04-10' },
+        { id: 5, name: "Emerald Drop Earrings", image: "/images/earrings-5.jpg", price: 169, wished: false, rating: 3, createdAt: '2025-01-25' },
+        { id: 6, name: "Golden Regent Earrings", image: "/images/earrings-6.jpg", price: 149, wished: false, rating: 5, createdAt: '2025-03-15' },
+        { id: 7, name: "Gold Majesty Earrings", image: "/images/earrings-7.jpg", price: 139, wished: false, rating: 4, createdAt: '2025-02-26' },
+        { id: 8, name: "Royal Pearl Earrings", image: "/images/earrings-8.jpg", price: 119, wished: false, rating: 3, createdAt: '2025-04-20' }
     ]
 };
