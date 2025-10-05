@@ -1,28 +1,11 @@
 <script>
   import { Heart } from 'lucide-svelte';
 
-  let products = [
-    { id: 1, name: "Aurora Chronograph", image: "/images/watch-1.jpg", price: "$249", wished: false },
-    { id: 2, name: "Midnight Eclipse", image: "/images/watch-2.jpg", price: "$129", wished: false },
-    { id: 3, name: "Silver Horizon", image: "/images/watch-3.jpg", price: "$199", wished: false },
-    { id: 4, name: "Diamond Starlight", image: "/images/watch-4.jpg", price: "$99", wished: false },
-    { id: 5, name: "Emerald Timepiece", image: "/images/watch-5.jpg", price: "$179", wished: false },
-    { id: 6, name: "Golden Regent", image: "/images/watch-6.jpg", price: "$229", wished: false },
-    { id: 7, name: "Silver & Gold Majesty", image: "/images/watch-7.jpg", price: "$259", wished: false },
-    { id: 8, name: "Royal Classic", image: "/images/watch-8.jpg", price: "$199", wished: false }
-  ];
+  import { products as allProducts } from '$lib/data/products';
+  import { sortLowToHigh, sortHighToLow, sortNewest, sortRecommended } from '$lib/helpers/sort-and-filters-helpers';
+  import { formatPrice } from '$lib/helpers/formatters-helpers';
 
-  function sortLowToHigh() {
-    products = [...products].sort((a, b) => getPrice(a.price) - getPrice(b.price));
-  }
-
-  function sortHighToLow() {
-    products = [...products].sort((a, b) => getPrice(b.price) - getPrice(a.price));
-  }
-
-  function getPrice(priceStr) {
-    return parseFloat(priceStr.replace('$', ''));
-  }
+  let products = allProducts.watches;
 </script>
 
 <div class="banner">
@@ -44,10 +27,10 @@
   <aside class="sidebar">
     <h3>Filters</h3>
     <h4>Sort by:</h4>
-    <label><input type="checkbox" on:click={sortLowToHigh}/> Price: Low to High</label>
-    <label><input type="checkbox" on:click={sortHighToLow}/> Price: High to Low</label>
-    <label><input type="checkbox" on:click={sortNewest}/> Newest</label>
-    <label><input type="checkbox" on:click={sortRecommended}/> Recommended</label>
+    <label><input type="radio" name="sort" on:click={(e) => { products = sortLowToHigh(products)}}/> Price: Low to High</label>
+    <label><input type="radio" name="sort" on:click={(e) => { products = sortHighToLow(products)}}/> Price: High to Low</label>
+    <label><input type="radio" name="sort" on:click={(e) => { products = sortNewest(products)}}/> Newest</label>
+    <label><input type="radio" name="sort" on:click={(e) => { products = sortRecommended(products)}}/> Recommended</label>
 
     <h4>Color</h4>
     <label><input type="checkbox" /> Gold</label>
@@ -92,7 +75,7 @@
 
         <img src={product.image} alt={product.name} />
         <h3>{product.name}</h3>
-        <p>{product.price}</p>
+        <p>{formatPrice(product.price)}</p>
         <button on:click={() => addToCart(product)}>Add to Cart</button>
       </div>
     {/each}
