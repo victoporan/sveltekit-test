@@ -38,7 +38,7 @@
 
 <div class="banner">
   <img src="/images/banner-1.png" alt="Equinox Banner" />
-  <a href="/collections/autumn" class="banner-btn">
+  <a href="/collection/autumn" class="banner-btn">
     Explore Autumn Collection
   </a>
 </div>
@@ -107,7 +107,7 @@
 
 <div class="banner bottom-banner">
   <img src="/images/footer-1.png" alt="Spring Collection" />
-  <a href="/collections/spring" class="banner-btn">
+  <a href="/collection/spring" class="banner-btn">
     Explore Spring Collection
   </a>
 </div>

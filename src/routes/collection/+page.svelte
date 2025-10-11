@@ -1,22 +1,22 @@
 <h2>All Season Collections</h2>
 
 <div class="collections-grid">
-  <a href="/collections/autumn" class="collection-card">
+  <a href="/collection\[seasons]/autumn" class="collection-card">
     <h4>AUTUMN COLLECTION</h4>
     <img src="/images/autumn-1.jpg" alt="Autumn Collection" />
   </a>
 
-  <a href="/collections/winter" class="collection-card">
+  <a href="/collection\[seasons]/winter" class="collection-card">
     <h4>WINTER COLLECTION</h4>
     <img src="/images/winter-2.jpg" alt="Winter Collection" />
   </a>
 
-  <a href="/collections/spring" class="collection-card">
+  <a href="/collection\[seasons]/spring" class="collection-card">
     <h4>SPRING COLLECTION</h4>
     <img src="/images/spring-2.jpg" alt="Spring Collection" />
   </a>
 
-  <a href="/collections/summer" class="collection-card">
+  <a href="/collection\[seasons]/summer" class="collection-card">
     <h4>SUMMER COLLECTION</h4>
     <img src="/images/summer-2.jpg" alt="Summer Collection" />
   </a>

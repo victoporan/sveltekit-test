@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import logo from '$lib/assets/logo-1.png';
   import { Search, Heart, ShoppingCart, User, MapPin, Facebook, Instagram, X } from 'lucide-svelte';
 
@@ -27,6 +28,10 @@
       window.removeEventListener('resize', handleScroll);
     };
   });
+
+    function navigateTo(path) {
+    goto(path);
+  }
 </script>
 
 <header>
@@ -52,15 +57,16 @@
     <nav class="nav-container {isSticky ? 'sticky' : ''}">
       <a href="/" class:active={$page.url.pathname === '/'}>Home</a>
 
-      <div class="dropdown">
-        <a href="/collections" class:active={$page.url.pathname.startsWith('/collections')}>Collections ▾</a>
-        <div class="dropdown-content">
-          <a href="/collections/autumn" class:active={$page.url.pathname === '/collections/autumn'}>Autumn</a>
-          <a href="/collections/winter" class:active={$page.url.pathname === '/collections/winter'}>Winter</a>
-          <a href="/collections/spring" class:active={$page.url.pathname === '/collections/spring'}>Spring</a>
-          <a href="/collections/summer" class:active={$page.url.pathname === '/collections/summer'}>Summer</a>
-        </div>
+    <div class="dropdown">
+      <a href="/collection" class:active={$page.url.pathname.startsWith('/collection')}>Collections ▾</a>
+      <div class="dropdown-content">
+        <a href="/collection/autumn" class:active={$page.url.pathname === '/autumn'}>Autumn</a>
+        <a href="/collection/winter" class:active={$page.url.pathname === '/winter'}>Winter</a>
+        <a href="/collection/spring" class:active={$page.url.pathname === '/spring'}>Spring</a>
+        <a href="/collection/summer" class:active={$page.url.pathname === '/collection/summer'}>Summer</a>
       </div>
+    </div>
+
 
       <a href="/products/watches" class:active={$page.url.pathname === '/watches'}>Watches</a>
       <a href="/products/rings" class:active={$page.url.pathname === '/rings'}>Rings</a>
