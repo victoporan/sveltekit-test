@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { products as allProducts } from '$lib/data/products';
+import { productsByType as allProducts } from '$lib/data/products-by-type';
 import { banners } from '$lib/data/banners';
 
 /** @type {import('./$types').PageLoad} */

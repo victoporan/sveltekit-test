@@ -1,4 +1,4 @@
-export const products = {
+export const productsByType = {
     watches: [
         { id: 1, name: "Aurora Chronograph", image: "/images/watch-1.jpg", price: 249, wished: false, rating: 2, createdAt: '2025-01-10' },
         { id: 2, name: "Midnight Eclipse", image: "/images/watch-2.jpg", price: 129, wished: false, rating: 5, createdAt: '2025-02-10' },

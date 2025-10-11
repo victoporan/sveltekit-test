@@ -5,26 +5,29 @@
 
   export let data;
 
-    $: seasons = data.seasons;
+  $: products = data.products;
+  $: season = data.season;
+  $: title = data.title;
 
-    function toggleWishlist(product) {
-        product.wished = !product.wished;
-    }
 
-    function addToCart(product) {
-        console.log('Adding to cart:', product);
-    }
 
-    function handleUpdate(event) {
-        product = event.detail.sorted;
-    }
+  function toggleWishlist(product) {
+      product.wished = !product.wished;
+  }
+
+  function addToCart(product) {
+      console.log('Adding to cart:', product);
+  }
 </script>
 
-<div class="shop-container">
-  <SortAndFilters {product} />
+<h1>{title}</h1>
 
-  <main class="products-grid">
-    {#each product as product}
+<div class="shop-container">
+  
+  <SortAndFilters products={products} />
+
+  <main id="watches" class="products-grid">
+    {#each products as product}
       <div class="product-card">
         <button
           class="wishlist-icon"
@@ -47,11 +50,9 @@
   </main>
 </div>
 
-
-
-
-
 <style>
+
+/* Shop container */
 .shop-container {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -59,6 +60,8 @@
   padding: 20px;
 }
 
+
+/* Products grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -87,12 +90,12 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
   border: none;
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   transition: transform 0.2s;
 }
 
@@ -116,11 +119,15 @@ button:hover {
   color: #fff;
 }
 
+/* Responsive */
+/* Tablet */
 @media (max-width: 900px) {
   .shop-container {
     grid-template-columns: 1fr;
     gap: 15px;
   }
+
+ 
 
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -128,25 +135,23 @@ button:hover {
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .shop-container {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
+
   .products-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
+
   .wishlist-icon {
     width: 20px;
     height: 20px;
-  }
-
-  button {
-    font-size: 0.9rem;
-    padding: 0.4rem;
   }
 }
 </style>

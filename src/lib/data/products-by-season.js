@@ -1,4 +1,4 @@
-export const seasons = {
+export const productsBySeason = {
   autumn: [
     { id: 1, name: "Golden Autumn Bracelet", image: "/images/autumn-bracelet-3.jpg", price: 49, wished: false, rating: 1, createdAt: '2025-01-10' },
     { id: 2, name: "Stone Earrings", image: "/images/autumn-earrings-4.jpg", price: 29, wished: false, rating: 4, createdAt: '2025-03-02' },
