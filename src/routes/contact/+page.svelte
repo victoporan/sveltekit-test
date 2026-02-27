@@ -109,8 +109,6 @@
   background-color: rgb(80, 70, 80);
 }
 
-/* Responsive */
-/* Tablet */
 @media (max-width: 900px) {
   .contact-page {
     padding: 2.5rem 1.5rem;
@@ -128,7 +126,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .contact-page {
     padding: 2rem 1rem;

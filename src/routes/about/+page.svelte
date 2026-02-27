@@ -97,7 +97,6 @@
   text-align: justify;
 }
 
-/* Tablet Responsive */
 @media (max-width: 900px) {
   .about-icons {
     flex-direction: column;
@@ -110,7 +109,6 @@
   }
 }
 
-/* Mobile Responsive */
 @media (max-width: 600px) {
   .about-text h2 {
     font-size: 28px;

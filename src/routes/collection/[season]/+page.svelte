@@ -26,10 +26,9 @@
   </p>
 {:else}
   <div class="wrap">
-    <!-- Sidebar filters -->
+
     <SortAndFilters bind:products />
 
-    <!-- Products grid -->
     <div class="grid">
       {#each products as p}
         <button type="button" class="card" on:click={() => openProduct(p)}>

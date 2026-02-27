@@ -3,7 +3,6 @@ import { productsBySeason as allProducts } from "$lib/data/products-by-season";
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
-  // parametrul din URL trebuie să se potrivească cu numele folderului
   const season = params.season.toLowerCase();
 
   console.log("season", season);
