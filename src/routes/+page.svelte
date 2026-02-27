@@ -15,7 +15,6 @@
     showModal = false;
   }
 
-  // 🎯 Scroll animation logic
   let featuredCards = [];
 
   onMount(() => {
@@ -35,12 +34,9 @@
   });
 </script>
 
-
 <div class="banner">
   <img src="/images/banner-1.png" alt="Equinox Banner" />
-  <a href="/collection/autumn" class="banner-btn">
-    Explore Autumn Collection
-  </a>
+  <a href="/collection/autumn" class="banner-btn">Explore Autumn Collection</a>
 </div>
 
 <section class="intro">
@@ -53,19 +49,19 @@
 </section>
 
 <section class="featured">
-  <button class="card" on:click={() => openModal('/images/home-1.jpg','Splendor')}>
+  <button class="card" on:click={() => openModal("/images/home-1.jpg", "Splendor")}>
     <img src="/images/home-1.jpg" alt="Ring" />
     <h3>Splendor</h3>
   </button>
-  <button class="card" on:click={() => openModal('/images/home-2.jpg','Elegance')}>
+  <button class="card" on:click={() => openModal("/images/home-2.jpg", "Elegance")}>
     <img src="/images/home-2.jpg" alt="Necklace" />
     <h3>Elegance</h3>
   </button>
-  <button class="card" on:click={() => openModal('/images/home-3.jpg','Luxury')}>
+  <button class="card" on:click={() => openModal("/images/home-3.jpg", "Luxury")}>
     <img src="/images/home-3.jpg" alt="Bracelet" />
     <h3>Luxury</h3>
   </button>
-  <button class="card" on:click={() => openModal('/images/home-4.jpg','Brilliance')}>
+  <button class="card" on:click={() => openModal("/images/home-4.jpg", "Brilliance")}>
     <img src="/images/home-4.jpg" alt="Bracelet" />
     <h3>Brilliance</h3>
   </button>
@@ -74,20 +70,21 @@
 <section class="intro-him-her">
   <h2>Jewelry for Him</h2>
 </section>
+
 <section class="featured">
-  <button class="card" on:click={() => openModal('/images/home2-1.jpg','Splendor')}>
+  <button class="card" on:click={() => openModal("/images/home2-1.jpg", "Valor")}>
     <img src="/images/home2-1.jpg" alt="Ring" />
     <h3>Valor</h3>
   </button>
-  <button class="card" on:click={() => openModal('/images/home2-2.jpg','Elegance')}>
+  <button class="card" on:click={() => openModal("/images/home2-2.jpg", "Prestige")}>
     <img src="/images/home2-2.jpg" alt="Necklace" />
     <h3>Prestige</h3>
   </button>
-  <button class="card" on:click={() => openModal('/images/home2-3.jpg','Luxury')}>
+  <button class="card" on:click={() => openModal("/images/home2-3.jpg", "Edge")}>
     <img src="/images/home2-3.jpg" alt="Bracelet" />
     <h3>Edge</h3>
   </button>
-  <button class="card" on:click={() => openModal('/images/home2-4.jpg','Brilliance')}>
+  <button class="card" on:click={() => openModal("/images/home2-4.jpg", "Rafinement")}>
     <img src="/images/home2-4.jpg" alt="Bracelet" />
     <h3>Rafinement</h3>
   </button>
@@ -97,9 +94,9 @@
   <div class="container">
     <h2>Our Promise</h2>
     <p>
-      At Equinox Jewelry, we create pieces that capture timeless elegance.  
-      Every ring, necklace, and bracelet is crafted with precision and care, using only the finest materials.  
-      Our collections are designed to reflect your unique style and to make every moment unforgettable.  
+      At Equinox Jewelry, we create pieces that capture timeless elegance.
+      Every ring, necklace, and bracelet is crafted with precision and care, using only the finest materials.
+      Our collections are designed to reflect your unique style and to make every moment unforgettable.
       Explore our range to find the perfect accessory that resonates with your personality and taste.
     </p>
   </div>
@@ -107,9 +104,7 @@
 
 <div class="banner bottom-banner">
   <img src="/images/footer-1.png" alt="Spring Collection" />
-  <a href="/collection/spring" class="banner-btn">
-    Explore Spring Collection
-  </a>
+  <a href="/collection/spring" class="banner-btn">Explore Spring Collection</a>
 </div>
 
 {#if showModal}
@@ -119,20 +114,15 @@
     aria-modal="true"
     tabindex="0"
     on:click={closeModal}
-    on:keydown={(e) => e.key === 'Escape' && closeModal()}
+    on:keydown={(e) => e.key === "Escape" && closeModal()}
   >
-    <div
-      class="modal-content"
-      role="presentation" 
-      on:click|stopPropagation
-    >
+    <div class="modal-content" role="presentation" on:click|stopPropagation>
       <button class="close" on:click={closeModal} aria-label="Close modal">&times;</button>
       <img src={modalImg} alt={modalTitle} />
       <h2>{modalTitle}</h2>
     </div>
   </div>
 {/if}
-
 
 <style>
   :global(html),
@@ -142,12 +132,15 @@
     overflow-x: hidden;
   }
 
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    box-sizing: border-box;
+  }
 
   .banner {
     position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
     overflow: hidden;
   }
 
@@ -155,7 +148,6 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
   }
 
   .banner-btn {
@@ -164,13 +156,14 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 1rem 3rem;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #111;
     color: #111;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
+    z-index: 2;
   }
 
   .banner-btn:hover {
@@ -198,7 +191,7 @@
   }
 
   .intro-him-her {
-    padding: -10px 10%;
+    padding: 0 10%;
     text-align: center;
   }
 
@@ -220,17 +213,23 @@
     cursor: pointer;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   button.card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   }
 
   button.card img {
     width: 100%;
+    display: block;
+    margin: 0 auto 15px;
     border-radius: 10px;
-    margin-bottom: 15px;
   }
 
   button.card h3 {
@@ -244,7 +243,7 @@
     padding: 30px;
     background: #f4f4f4;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
 
@@ -260,10 +259,8 @@
 
   .modal {
     position: fixed;
-    top:0; left:0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,9 +271,12 @@
 
   .modal-content {
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    width: min(520px, 100%);
+    margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .modal-content img {
@@ -285,6 +285,8 @@
     max-height: 80vh;
     border-radius: 12px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 
   .modal-content h2 {
@@ -299,12 +301,38 @@
     right: 10px;
     font-size: 28px;
     color: #fff;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    .banner {
+      min-height: 320px;
+    }
+
+    .banner img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+    }
+
+    .banner-btn {
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      max-width: calc(100% - 32px);
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.75);
+    }
   }
 
   @media (max-width: 600px) {
@@ -322,9 +350,21 @@
       padding: 20px;
     }
 
+    .banner {
+      min-height: 260px;
+    }
+
     .banner-btn {
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    .modal {
+      padding: 14px;
+    }
+
+    .modal-content {
+      width: 100%;
     }
   }
 </style>

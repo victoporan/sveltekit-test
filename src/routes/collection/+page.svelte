@@ -1,25 +1,33 @@
+<script>
+  import { goto } from '$app/navigation';
+
+  function nav(path) {
+    goto(path);
+  }
+</script>
+
 <h2>All Season Collections</h2>
 
 <div class="collections-grid">
-  <a href="/collection\[seasons]/autumn" class="collection-card">
+  <button type="button" class="collection-card" on:click={() => nav('/collection/autumn')}>
     <h4>AUTUMN COLLECTION</h4>
     <img src="/images/autumn-1.jpg" alt="Autumn Collection" />
-  </a>
+  </button>
 
-  <a href="/collection\[seasons]/winter" class="collection-card">
+  <button type="button" class="collection-card" on:click={() => nav('/collection/winter')}>
     <h4>WINTER COLLECTION</h4>
     <img src="/images/winter-2.jpg" alt="Winter Collection" />
-  </a>
+  </button>
 
-  <a href="/collection\[seasons]/spring" class="collection-card">
+  <button type="button" class="collection-card" on:click={() => nav('/collection/spring')}>
     <h4>SPRING COLLECTION</h4>
     <img src="/images/spring-2.jpg" alt="Spring Collection" />
-  </a>
+  </button>
 
-  <a href="/collection\[seasons]/summer" class="collection-card">
+  <button type="button" class="collection-card" on:click={() => nav('/collection/summer')}>
     <h4>SUMMER COLLECTION</h4>
     <img src="/images/summer-2.jpg" alt="Summer Collection" />
-  </a>
+  </button>
 </div>
 
 <style>
@@ -64,6 +72,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
   }
 
   .collection-card h4 {
@@ -77,13 +87,13 @@
     border-radius: 10px;
     margin-top: 5px;
     transition: transform 0.3s ease;
+    display: block;
   }
 
   .collection-card:hover {
     transform: translateY(-6px);
     border-color: transparent;
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
   }
 
   .collection-card:hover img {
@@ -92,3 +102,4 @@
     outline-offset: -2px;
   }
 </style>
+
