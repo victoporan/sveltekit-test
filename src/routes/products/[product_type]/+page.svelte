@@ -5,8 +5,17 @@
 
   export let data;
 
-  $: products = data.products;
-  $: banner = data.banner;
+  let products = [];
+  let banner;
+
+  let lastProductsRef;
+  $: {
+    if (data?.products && data.products !== lastProductsRef) {
+      products = data.products;
+      lastProductsRef = data.products;
+    }
+    banner = data?.banner;
+  }
 
   function toggleWishlist(product) {
     product.wished = !product.wished;
@@ -36,7 +45,8 @@
 </div>
 
 <div class="shop-container">
-  <SortAndFilters products={products} />
+
+  <SortAndFilters bind:products />
 
   <main id={data.productType} class="products-grid">
     {#each products as product}
@@ -54,8 +64,11 @@
           />
         </button>
 
-        <img src={product.image} alt={product.name} />
-        <h3>{product.name}</h3>
+        <a class="product-link" href={`/products/${data.productType}/${product.id}`}>
+          <img src={product.image} alt={product.name} />
+          <h3>{product.name}</h3>
+        </a>
+
         <p>{formatPrice(product.price)}</p>
         <button on:click={() => addToCart(product)}>Add to Cart</button>
       </div>
@@ -137,9 +150,16 @@
     transition: transform 0.2s;
   }
 
-  .product-card img {
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .product-link img {
     max-width: 100%;
     border-radius: 8px;
+    display: block;
   }
 
   .product-card:hover {
@@ -158,6 +178,7 @@
     cursor: pointer;
     transition: transform 0.2s;
     background: transparent;
+    z-index: 3;
   }
 
   .wishlist-icon:hover {

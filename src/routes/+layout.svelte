@@ -55,28 +55,42 @@
   }
 
   function updateSearch() {
-    const v = q.trim().toLowerCase();
-    activeIndex = -1;
+  const v = q.trim().toLowerCase();
+  activeIndex = -1;
 
-    if (v.length < 2) {
-      searchResults = [];
-      showSearch = false;
-      return;
-    }
-
-    searchResults = all
-      .filter((p) => (p.name || '').toLowerCase().includes(v))
-      .slice(0, 8);
-
+  if (v.length === 0) {
+    const shuffled = [...all].sort(() => Math.random() - 0.5);
+    searchResults = shuffled.slice(0, 8);
     showSearch = searchResults.length > 0;
+    return;
   }
 
-  function pick(p) {
-    q = '';
+  if (v.length < 2) {
+    searchResults = [];
     showSearch = false;
-    activeIndex = -1;
-    goto(`${p.route}?pid=${p.id}#p-${p.group}-${p.id}`);
+    return;
   }
+
+  searchResults = all
+    .filter((p) => (p.name || '').toLowerCase().includes(v))
+    .slice(0, 8);
+
+  showSearch = searchResults.length > 0;
+}
+
+  async function pick(p) {
+  const types = new Set(['watches', 'rings', 'bracelets', 'necklaces', 'earrings']);
+
+  const target = types.has(p.group)
+    ? `/products/${p.group}/${p.id}`
+    : `/collection/${p.group}/${p.id}`;
+
+  q = '';
+  showSearch = false;
+  activeIndex = -1;
+
+  await goto(target, { invalidateAll: true, noScroll: true });
+}
 
   function submitSearch() {
     const v = q.trim();
@@ -153,12 +167,12 @@
         </a>
 
         {#if dropdownOpen}
-          <div class="dropdown-content">
-            <a href="/collection/autumn" on:click|preventDefault={() => goToSeason('/collection/autumn')} class:active={$page.url.pathname === '/collection/autumn'}>Autumn</a>
-            <a href="/collection/winter" on:click|preventDefault={() => goToSeason('/collection/winter')} class:active={$page.url.pathname === '/collection/winter'}>Winter</a>
-            <a href="/collection/spring" on:click|preventDefault={() => goToSeason('/collection/spring')} class:active={$page.url.pathname === '/collection/spring'}>Spring</a>
-            <a href="/collection/summer" on:click|preventDefault={() => goToSeason('/collection/summer')} class:active={$page.url.pathname === '/collection/summer'}>Summer</a>
-          </div>
+        <div class="dropdown-content">
+          <a href="/collection/autumn" on:click|preventDefault={() => goToSeason('/collection/autumn')} class:active={$page.url.pathname === '/collection/autumn'}>Autumn</a>
+          <a href="/collection/winter" on:click|preventDefault={() => goToSeason('/collection/winter')} class:active={$page.url.pathname === '/collection/winter'}>Winter</a>
+          <a href="/collection/spring" on:click|preventDefault={() => goToSeason('/collection/spring')} class:active={$page.url.pathname === '/collection/spring'}>Spring</a>
+          <a href="/collection/summer" on:click|preventDefault={() => goToSeason('/collection/summer')} class:active={$page.url.pathname === '/collection/summer'}>Summer</a>
+        </div>
         {/if}
       </div>
 
@@ -193,7 +207,7 @@
                 type="button"
                 class="search-item"
                 class:active={i === activeIndex}
-                on:mousedown|preventDefault={() => pick(p)}
+                on:pointerdown|preventDefault={() => pick(p)}
                 role="option"
                 aria-selected={i === activeIndex}
               >

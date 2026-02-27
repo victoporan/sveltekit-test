@@ -1,157 +1,115 @@
 <script>
   import SortAndFilters from '$lib/components/SortAndFilters.svelte';
-  import { Heart } from 'lucide-svelte';
-  import { formatPrice } from '$lib/helpers/formatters-helpers';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
+  import { getAllProducts } from '$lib/data/all-products';
 
-  export let data;
+  const all = getAllProducts();
 
-  $: products = data.products;
-  $: season = data.season;
-  $: title = data.title;
+  $: season = $page.params.season;
 
+  $: base = all.filter((p) => p.group === season);
 
+  let products = [];
+  $: products = base;
 
-  function toggleWishlist(product) {
-      product.wished = !product.wished;
-  }
-
-  function addToCart(product) {
-      console.log('Adding to cart:', product);
+  function openProduct(p) {
+    goto(`/collection/${season}/${p.id}`);
   }
 </script>
 
-<h1>{title}</h1>
+<h2>{season.toUpperCase()} COLLECTION</h2>
 
-<div class="shop-container">
-  
-  <SortAndFilters products={products} />
+{#if base.length === 0}
+  <p style="text-align:center; margin-top: 20px;">
+    No products found for this season.
+  </p>
+{:else}
+  <div class="wrap">
+    <!-- Sidebar filters -->
+    <SortAndFilters bind:products />
 
-  <main id="watches" class="products-grid">
-    {#each products as product}
-      <div class="product-card">
-        <button
-          class="wishlist-icon"
-          on:click={() => toggleWishlist(product)}
-          aria-label={product.wished ? "Remove from wishlist" : "Add to wishlist"}>
-          <Heart
-            size="24"
-            stroke="#fff"
-            stroke-width="2"
-            fill={product.wished ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.5)"}
-          />
+    <!-- Products grid -->
+    <div class="grid">
+      {#each products as p}
+        <button type="button" class="card" on:click={() => openProduct(p)}>
+          <img src={p.image} alt={p.name} />
+          <div class="name">{p.name}</div>
+          <div class="price">${p.price}</div>
         </button>
-
-        <img src={product.image} alt={product.name} />
-        <h3>{product.name}</h3>
-        <p>{formatPrice(product.price)}</p>
-        <button on:click={() => addToCart(product)}>Add to Cart</button>
-      </div>
-    {/each}
-  </main>
-</div>
+      {/each}
+    </div>
+  </div>
+{/if}
 
 <style>
-
-/* Shop container */
-.shop-container {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 20px;
-  padding: 20px;
-}
-
-
-/* Products grid */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.product-card {
-  position: relative;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px;
-  transition: transform 0.2s;
-}
-
-.product-card img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.wishlist-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  border: none;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.wishlist-icon:hover {
-  transform: scale(1.2);
-}
-
-button {
-  margin-top: 0;
-  padding: 0.5rem 0;
-  width: 100%;
-  background-color: transparent;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-  background-color: #7f7b7b;
-  color: #fff;
-}
-
-/* Responsive */
-/* Tablet */
-@media (max-width: 900px) {
-  .shop-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  h2 {
+    font-size: 28px;
+    margin: 30px 0;
+    text-align: center;
   }
 
- 
-
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .shop-container {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .wrap {
+    max-width: 1800px;
+    margin: 0 auto 40px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
   }
 
-
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-
-  .wishlist-icon {
-    width: 20px;
-    height: 20px;
+  @media (max-width: 1023px) {
+    .wrap {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+    }
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-}
+
+  @media (max-width: 767px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    text-align: left;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 0 0 1px #eee;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .price {
+    opacity: 0.8;
+  }
 </style>
